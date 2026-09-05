@@ -1,0 +1,22 @@
+# DevEco Studio / HarmonyOS 构建产物
+/.idea
+/.hvigor
+**/build
+**/.preview
+**/.test
+/.appanalyzer
+/.clangd
+/.clang-format
+/.clang-tidy
+
+# 本地配置
+local.properties
+oh_modules/
+node_modules/
+
+# 签名信息（安全考虑，见说明）
+build-profile.json5
+
+# 系统文件
+.DS_Store
+Thumbs.db

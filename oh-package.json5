@@ -1,0 +1,8 @@
+{
+  "modelVersion": "5.0.0",
+  "description": "频域水印应用 - 基于 DCT 的图片频域数字水印工具",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
