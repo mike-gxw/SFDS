@@ -2,19 +2,19 @@
   "string": [
     {
       "name": "module_desc",
-      "value": "频域水印 entry 模块"
+      "value": "XW加密 entry 模块"
     },
     {
       "name": "EntryAbility_desc",
-      "value": "频域水印工具"
+      "value": "XW加密"
     },
     {
       "name": "EntryAbility_label",
-      "value": "频域水印"
+      "value": "XW加密"
     },
     {
       "name": "read_media_reason",
-      "value": "用于从相册选择图片以嵌入或提取频域水印"
+      "value": "用于从相册选择图片以嵌入或提取水印"
     },
     {
       "name": "write_media_reason",
@@ -26,7 +26,7 @@
     },
     {
       "name": "privacy_content",
-      "value": "本应用为频域水印工具，全部图片处理均在您的设备本地完成，不会将任何图片或数据上传至服务器。\n\n本应用仅申请相册读写权限，用于：\n1. 从相册选择图片进行水印嵌入或提取；\n2. 将处理后的图片保存到您的相册。\n\n我们不会收集、存储或共享您的任何个人信息。"
+      "value": "本应用为XW加密，全部图片处理均在您的设备本地完成，不会将任何图片或数据上传至服务器。\n\n本应用仅申请相册读写权限，用于：\n1. 从相册选择图片进行水印嵌入或提取；\n2. 将处理后的图片保存到您的相册。\n\n我们不会收集、存储或共享您的任何个人信息。"
     },
     {
       "name": "agree",
