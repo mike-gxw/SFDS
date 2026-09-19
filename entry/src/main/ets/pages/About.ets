@@ -29,7 +29,7 @@ struct About {
 
       Column() {
         Row() {
-          Text('SFDS')
+          Text('XW加密')
             .fontSize(52)
             .fontWeight(FontWeight.Bold)
             .fontColor('#1E2A3B')
@@ -47,7 +47,7 @@ struct About {
         })
         .margin({ top: 72 })
 
-        Text('频域水印')
+        Text('XW加密')
           .fontSize(22)
           .fontWeight(FontWeight.Bold)
           .fontColor('#1E2A3B')
@@ -94,7 +94,7 @@ struct About {
       .layoutWeight(1)
       .alignItems(HorizontalAlign.Center)
 
-      Text('© 2026 频域水印 · 本地处理，数据不上传')
+      Text('© 2026 XW加密 · 本地处理，数据不上传')
         .fontSize(11)
         .fontColor('#8C99A9')
         .width('100%')

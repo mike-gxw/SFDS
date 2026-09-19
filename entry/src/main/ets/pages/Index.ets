@@ -1,15 +1,13 @@
-// Index.ets - 主界面（频域水印工具）
+// Index.ets - 主界面（XW加密）
 
 import { image } from '@kit.ImageKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { fileIo, fileUri } from '@kit.CoreFileKit';
 import { promptAction, router } from '@kit.ArkUI';
-import { preferences } from '@kit.ArkData';
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { LoadedImage, selectImage, loadImagePixels } from '../common/ImageHelper';
 import { textToBits, bitsToText } from '../common/WatermarkUtils';
 import { embedWatermarkAsync, extractWatermarkAsync, maxBitsCapacity } from '../common/DctWatermark';
-import { PrivacyDialog } from '../common/PrivacyDialog';
 
 // 色板常量（霜雾水色 + 液态玻璃主题）
 const COL_BG_1: string = '#D8ECF8';
@@ -76,59 +74,6 @@ struct Index {
   private resultPixels: Uint8Array | null = null;
   private resultWidth: number = 0;
   private resultHeight: number = 0;
-  private privacyController: CustomDialogController | null = null;
-
-  aboutToAppear(): void {
-    this.privacyController = new CustomDialogController({
-      builder: PrivacyDialog({
-        onAgree: (): void => {
-          this.onPrivacyAgree();
-        },
-        onDisagree: (): void => {
-          this.onPrivacyDisagree();
-        }
-      }),
-      autoCancel: false
-    });
-    this.checkAndShowPrivacy();
-  }
-
-  private async checkAndShowPrivacy(): Promise<void> {
-    const agreed: boolean = await this.readPrivacyAgreed();
-    if (!agreed && this.privacyController !== null) {
-      this.privacyController.open();
-    }
-  }
-
-  private async readPrivacyAgreed(): Promise<boolean> {
-    try {
-      const context: Context = getContext(this);
-      const pref: preferences.Preferences = await preferences.getPreferences(context, 'privacy_config');
-      const val: preferences.ValueType = await pref.get('agreed', false);
-      return val as boolean;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  private onPrivacyAgree(): void {
-    this.savePrivacyAgreed();
-  }
-
-  private onPrivacyDisagree(): void {
-    promptAction.showToast({ message: '需同意隐私政策后才能正常使用' });
-  }
-
-  private async savePrivacyAgreed(): Promise<void> {
-    try {
-      const context: Context = getContext(this);
-      const pref: preferences.Preferences = await preferences.getPreferences(context, 'privacy_config');
-      await pref.put('agreed', true);
-      await pref.flush();
-    } catch (e) {
-      // 持久化失败不阻断使用
-    }
-  }
 
   private async onSelectImage(): Promise<void> {
     const uri: string = await selectImage();
@@ -298,7 +243,7 @@ struct Index {
   @Builder
   HeaderBar() {
     Row() {
-      Text('频域水印工具-SFDS')
+      Text('XW加密')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
         .fontColor(COL_TEXT)
