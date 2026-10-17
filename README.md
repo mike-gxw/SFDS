@@ -1,4 +1,4 @@
-# SFDS - WatermarkApp 📸
+# SFDS - ARKTS 📸
 
 一个基于 HarmonyOS 开发的水印添加工具，可以方便地为图片添加文字或图片水印。
 
